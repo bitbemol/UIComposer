@@ -5,7 +5,7 @@ final class LabelBuilderTests: XCTestCase {
     
     func testLabelBuilder() {
         let label = LabelBuilder()
-            .withTAMIC(false)
+            .withAutoLayout()
             .withText("Hello World")
             .build()
         
@@ -14,7 +14,7 @@ final class LabelBuilderTests: XCTestCase {
     
     func testTitleLabelStyle() {
         let label = LabelBuilder()
-            .withTAMIC(false)
+            .withAutoLayout()
             .withText("Title Label")
             .withStyle(.title)
             .build()
@@ -27,7 +27,7 @@ final class LabelBuilderTests: XCTestCase {
     
     func testSubtitleLabelStyle() {
         let label = LabelBuilder()
-            .withTAMIC(false)
+            .withAutoLayout()
             .withText("Subtitle Label")
             .withStyle(.subtitle)
             .build()
@@ -40,7 +40,7 @@ final class LabelBuilderTests: XCTestCase {
     
     func testBodyLabelStyle() {
         let label = LabelBuilder()
-            .withTAMIC(false)
+            .withAutoLayout()
             .withText("Body Label")
             .withStyle(.body)
             .build()
@@ -53,7 +53,7 @@ final class LabelBuilderTests: XCTestCase {
     
     func testCaptionLabelStyle() {
         let label = LabelBuilder()
-            .withTAMIC(false)
+            .withAutoLayout()
             .withText("Caption Label")
             .withStyle(.caption)
             .build()
@@ -67,7 +67,7 @@ final class LabelBuilderTests: XCTestCase {
     func testCustomTextColor() {
         let customColor = UIColor.red
         let label = LabelBuilder()
-            .withTAMIC(false)
+            .withAutoLayout()
             .withText("Custom Text Color")
             .withTextColor(customColor)
             .build()
@@ -78,7 +78,7 @@ final class LabelBuilderTests: XCTestCase {
     
     func testMultiline() {
         let label = LabelBuilder()
-            .withTAMIC(false)
+            .withAutoLayout()
             .withText("Multiline Text")
             .withMultiline(true)
             .build()
