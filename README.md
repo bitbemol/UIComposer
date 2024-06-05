@@ -12,3 +12,28 @@ UIComposer is a simple package that provides a collection of UIKit builders, off
 ## Installation
 
 Add UIComposer to your project using Swift Package Manager. In Xcode, select `File > Swift Packages > Add Package Dependency`, and enter the repository URL.
+
+## Usage
+
+```swift
+import UIComposer
+
+let titleLabel = LabelBuilder()
+    .withTAMIC(true)
+    .withText("Title Label")
+    .withStyle(.title)
+    .build()
+
+let customColorLabel = LabelBuilder()
+    .withText("Custom Text Color")
+    .withTextColor(.red)
+    .build()
+```
+
+## Contribution
+
+Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
+
+## License
+
+UIComposer is released under the MIT license. See LICENSE for details.
