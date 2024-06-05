@@ -13,8 +13,8 @@ public final class LabelBuilder {
     
     public init() {}
     
-    public func withAutoLayout(_ activate: Bool) -> Self {
-        label.translatesAutoresizingMaskIntoConstraints = !activate
+    public func withAutoLayout() -> Self {
+        label.translatesAutoresizingMaskIntoConstraints = false
         return self
     }
     
