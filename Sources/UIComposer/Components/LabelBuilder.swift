@@ -11,6 +11,8 @@ public enum LabelStyle {
 public final class LabelBuilder {
     private var label = UILabel()
     
+    public init() {}
+    
     public func withTAMIC(_ activate: Bool) -> Self {
         label.translatesAutoresizingMaskIntoConstraints = activate
         return self
