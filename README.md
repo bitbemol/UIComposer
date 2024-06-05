@@ -19,29 +19,54 @@ Add UIComposer to your project using Swift Package Manager. In Xcode, select `Fi
 import UIComposer
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    let label = LabelBuilder()
+    private var counter = 0
+    
+    // Using LabelBuilder to create a label
+    private lazy var label = LabelBuilder()
         .withStyle(.title)
         .withAutoLayout()
-        .withText("Hello Builder")
+        .withText("Button Pressed \(counter) times")
+        .build()
+    
+    // Using ButtonBuilder to create a button
+    private lazy var button = ButtonBuilder()
+        .withAction { [weak self] in
+            guard let self = self else { return }
+            self.counter += 1
+            self.label.text = "Button Pressed \(self.counter) times"
+        }
+        .withAutoLayout()
+        .withStyle(.bordered())
+        .withTitle(for: .normal, "Press me")
         .build()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(label)
+        view.addSubview(button)
+        
+        // Setting up layout constraints
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 32)
         ])
     }
 }
 
-  
+// Canvas preview, iOS 17+
 #Preview {
     ViewController()
 }
+
 ```
+
+
+
 
 ## Contribution
 
