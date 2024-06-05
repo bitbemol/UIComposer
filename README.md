@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     let label = LabelBuilder()
         .withStyle(.title)
-        .withTAMIC(false)
+        .withAutoLayout()
         .withText("Hello Builder")
         .build()
 
