@@ -1,6 +1,6 @@
 import UIKit
 
-enum LabelStyle {
+public enum LabelStyle {
     case title
     case subtitle
     case body
@@ -8,7 +8,7 @@ enum LabelStyle {
 }
 
 
-final class LabelBuilder {
+public final class LabelBuilder {
     private var label = UILabel()
     
     func withTAMIC(_ activate: Bool) -> Self {
