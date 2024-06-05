@@ -1,9 +1,3 @@
-//
-//  ButtonBuilderTests.swift
-//
-//
-//  Created by Manuel Salazar on 6/4/24.
-//
 @testable import UIComposer
 import XCTest
 
