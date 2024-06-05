@@ -12,7 +12,7 @@ final class LabelBuilder {
     private var label = UILabel()
     
     func withTAMIC(_ activate: Bool) -> Self {
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = activate
         return self
     }
     
@@ -39,6 +39,13 @@ final class LabelBuilder {
             label.font = .systemFont(ofSize: 12)
             label.textColor = .lightGray
             label.backgroundColor = .clear
+        }
+        return self
+    }
+    
+    func withMultiline(_ activate: Bool) -> Self {
+        if activate {
+            label.numberOfLines = 0
         }
         return self
     }
