@@ -17,17 +17,30 @@ Add UIComposer to your project using Swift Package Manager. In Xcode, select `Fi
 
 ```swift
 import UIComposer
+import UIKit
 
-let titleLabel = LabelBuilder()
-    .withTAMIC(true)
-    .withText("Title Label")
-    .withStyle(.title)
-    .build()
+class ViewController: UIViewController {
+    
+    let label = LabelBuilder()
+        .withStyle(.title)
+        .withTAMIC(false)
+        .withText("Hello Builder")
+        .build()
 
-let customColorLabel = LabelBuilder()
-    .withText("Custom Text Color")
-    .withTextColor(.red)
-    .build()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+}
+
+  
+#Preview {
+    ViewController()
+}
 ```
 
 ## Contribution
