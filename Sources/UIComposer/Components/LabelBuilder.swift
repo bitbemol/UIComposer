@@ -51,9 +51,9 @@ final class LabelBuilder {
     }
     
     func withTextColor(_ color: UIColor) -> Self {
-            label.textColor = color
-            return self
-        }
+        label.textColor = color
+        return self
+    }
     
     func build() -> UILabel {
         label
