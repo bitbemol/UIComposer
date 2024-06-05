@@ -11,17 +11,17 @@ public enum LabelStyle {
 public final class LabelBuilder {
     private var label = UILabel()
     
-    func withTAMIC(_ activate: Bool) -> Self {
+    public func withTAMIC(_ activate: Bool) -> Self {
         label.translatesAutoresizingMaskIntoConstraints = activate
         return self
     }
     
-    func withText(_ text: String) -> Self {
+    public func withText(_ text: String) -> Self {
         label.text = text
         return self
     }
     
-    func withStyle(_ labelStyle: LabelStyle) -> Self {
+    public func withStyle(_ labelStyle: LabelStyle) -> Self {
         switch labelStyle {
         case .title:
             label.font = .boldSystemFont(ofSize: 24)
@@ -43,19 +43,19 @@ public final class LabelBuilder {
         return self
     }
     
-    func withMultiline(_ activate: Bool) -> Self {
+    public func withMultiline(_ activate: Bool) -> Self {
         if activate {
             label.numberOfLines = 0
         }
         return self
     }
     
-    func withTextColor(_ color: UIColor) -> Self {
+    public func withTextColor(_ color: UIColor) -> Self {
         label.textColor = color
         return self
     }
     
-    func build() -> UILabel {
+    public func build() -> UILabel {
         label
     }
 }
