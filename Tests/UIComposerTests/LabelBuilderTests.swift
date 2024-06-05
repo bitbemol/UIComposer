@@ -2,7 +2,7 @@
 import XCTest
 
 final class LabelBuilderTests: XCTestCase {
-
+    
     func testLabelBuilder() {
         let label = LabelBuilder()
             .withTAMIC(false)
@@ -74,5 +74,16 @@ final class LabelBuilderTests: XCTestCase {
         
         XCTAssertEqual(label.text, "Custom Text Color")
         XCTAssertEqual(label.textColor, customColor)
+    }
+    
+    func testMultiline() {
+        let label = LabelBuilder()
+            .withTAMIC(false)
+            .withText("Multiline Text")
+            .withMultiline(true)
+            .build()
+        
+        XCTAssertEqual(label.text, "Multiline Text")
+        XCTAssertEqual(label.numberOfLines, 0)
     }
 }
