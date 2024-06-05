@@ -13,8 +13,8 @@ public final class LabelBuilder {
     
     public init() {}
     
-    public func withTAMIC(_ activate: Bool) -> Self {
-        label.translatesAutoresizingMaskIntoConstraints = activate
+    public func withAutoLayout(_ activate: Bool) -> Self {
+        label.translatesAutoresizingMaskIntoConstraints = !activate
         return self
     }
     
