@@ -43,7 +43,7 @@ public struct SimpleConstraints {
     }
     
     /// Set the first view to the super view.  If no superview is set then this will throws an error.
-    public func stickTop(of newView: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint]  {
+    public func stickFirstTop(of newView: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint]  {
         guard let superview = newView.superview else { throw SimpleConstraintsError.missingSuperView }
         if case let .horizontal(leading, trailing) = padding {
             return [
