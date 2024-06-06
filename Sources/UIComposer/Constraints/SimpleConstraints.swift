@@ -78,4 +78,22 @@ public struct SimpleConstraints {
             view.centerYAnchor.constraint(equalTo: superview.centerYAnchor)
         ]
     }
+    
+    public func stickTopUsingRemainingSpace(of newView: UIView, to view: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint] {
+        guard let superview = view.superview else { throw SimpleConstraintsError.missingSuperView }
+        if case let .horizontal(leading, trailing) = padding {
+            return [
+                newView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: separation),
+                newView.leadingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.leadingAnchor, constant: leading),
+                newView.trailingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.trailingAnchor, constant: trailing),
+                newView.bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor)
+            ]
+        }
+        return [
+            newView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: separation),
+            newView.leadingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.leadingAnchor),
+            newView.trailingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.trailingAnchor),
+            newView.bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor)
+        ]
+    }
 }
