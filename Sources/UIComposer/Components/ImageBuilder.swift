@@ -3,6 +3,8 @@ import UIKit
 public final class ImageBuilder {
     private var image = UIImageView()
     
+    public init() { }
+    
     public func withAutoLayout() -> Self {
         image.translatesAutoresizingMaskIntoConstraints = false
         return self
