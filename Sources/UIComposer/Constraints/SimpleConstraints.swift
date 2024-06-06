@@ -79,7 +79,7 @@ public struct SimpleConstraints {
         ]
     }
     
-    public func stickTopUsingRemainingSpace(of newView: UIView, to view: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint] {
+    public func stickUsingRemainingSpaceTop(of newView: UIView, to view: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint] {
         guard let superview = view.superview else { throw SimpleConstraintsError.missingSuperView }
         if case let .horizontal(leading, trailing) = padding {
             return [
