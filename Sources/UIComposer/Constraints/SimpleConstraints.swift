@@ -41,7 +41,7 @@ public struct SimpleConstraints {
     public func stickTop(of newView: UIView, to superView: UIView, with separation: CGFloat = 0, padding: Padding?) -> [NSLayoutConstraint]  {
         if case let .horizontal(leading, trailing) = padding {
             return [
-                newView.topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor, constant: separation),
+                newView.topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor, constant: separation),
                 newView.leadingAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.leadingAnchor, constant: leading),
                 newView.trailingAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.trailingAnchor, constant: -trailing),
                 
