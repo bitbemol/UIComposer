@@ -54,7 +54,7 @@ public struct SimpleConstraints {
             ]
         }
         return [
-            newView.topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor, constant: separation),
+            newView.topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor, constant: separation),
             newView.leadingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.leadingAnchor),
             newView.trailingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.trailingAnchor),
             
