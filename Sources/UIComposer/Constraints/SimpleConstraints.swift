@@ -79,6 +79,7 @@ public struct SimpleConstraints {
         ]
     }
     
+    /// Set the given view to the bottom of the second view, taking all the remaining space in the superview. If no superview is set then this will throws an error.
     public func stickUsingRemainingSpaceTop(of newView: UIView, to view: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint] {
         guard let superview = view.superview else { throw SimpleConstraintsError.missingSuperView }
         if case let .horizontal(leading, trailing) = padding {
