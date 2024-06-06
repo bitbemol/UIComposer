@@ -45,6 +45,11 @@ public final class LabelBuilder {
         return self
     }
     
+    public func withAlignment(_ alignment: NSTextAlignment) -> Self {
+        label.textAlignment = alignment
+        return self
+    }
+    
     public func withMultiline(_ activate: Bool) -> Self {
         if activate {
             label.numberOfLines = 0
