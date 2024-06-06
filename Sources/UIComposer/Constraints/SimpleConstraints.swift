@@ -24,7 +24,7 @@ public struct SimpleConstraints {
     }
     
     /// Set subsequent views to the given view, use superView to stick the new view to the horizontal of the super view.  If no superview is set then this will throws an error.
-    public func stickTop(of newView: UIView, to view: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint]  {
+    public func stickTop(of newView: UIView, to view: UIView, with separation: CGFloat = 0, padding: Padding? = nil) throws -> [NSLayoutConstraint]  {
         guard let superview = newView.superview else { throw SimpleConstraintsError.missingSuperView }
         if case let .horizontal(leading, trailing) = padding {
             return [
@@ -43,7 +43,7 @@ public struct SimpleConstraints {
     }
     
     /// Set the first view to the super view.  If no superview is set then this will throws an error.
-    public func stickFirstTop(of newView: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint]  {
+    public func stickFirstTop(of newView: UIView, with separation: CGFloat = 0, padding: Padding? = nil) throws -> [NSLayoutConstraint]  {
         guard let superview = newView.superview else { throw SimpleConstraintsError.missingSuperView }
         if case let .horizontal(leading, trailing) = padding {
             return [
@@ -80,7 +80,7 @@ public struct SimpleConstraints {
     }
     
     /// Set the given view to the bottom of the second view, taking all the remaining space in the superview. If no superview is set then this will throws an error.
-    public func stickUsingRemainingSpaceTop(of newView: UIView, to view: UIView, with separation: CGFloat = 0, padding: Padding?) throws -> [NSLayoutConstraint] {
+    public func stickUsingRemainingSpaceTop(of newView: UIView, to view: UIView, with separation: CGFloat = 0, padding: Padding? = nil) throws -> [NSLayoutConstraint] {
         guard let superview = view.superview else { throw SimpleConstraintsError.missingSuperView }
         if case let .horizontal(leading, trailing) = padding {
             return [
