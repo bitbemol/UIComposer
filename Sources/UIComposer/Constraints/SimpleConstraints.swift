@@ -6,6 +6,9 @@ public enum Padding {
 }
 
 public struct SimpleConstraints {
+    
+    public init() { }
+    
     /// Set the new view to all sides of the super view
     public func stickToAllSides(for newView: UIView, to view: UIView, with padding: CGFloat = 0) -> [NSLayoutConstraint] {
         [
