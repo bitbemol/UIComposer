@@ -5,8 +5,8 @@ public final class TextFieldBuilder {
     
     public init() { }
     
-    public func setTamic(_ active: Bool) -> Self {
-        textField.translatesAutoresizingMaskIntoConstraints = active
+    public func withAutoLayout() -> Self {
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return self
     }
     
